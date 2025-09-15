@@ -1,0 +1,38 @@
+{
+  "name": "carono/yii2-url-behavior",
+  "description": "Yii2 behavior and URL rule component for dynamic URL generation based on model, action, user roles, and application context.",
+  "type": "yii2-extension",
+  "keywords": [
+    "yii2",
+    "extension"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "homepage": "https://carono.ru",
+      "name": "Alexander Kasyanov",
+      "email": "info@carono.ru"
+    }
+  ],
+  "require": {
+	"php": "^7.4 || 8.*",
+    "yiisoft/yii2": "^2.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "carono\\yii2\\behaviors\\": "src",
+      "carono\\yii2\\behaviors\\components\\": "components"
+    }
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://asset-packagist.org"
+    }
+  ],
+  "config": {
+    "allow-plugins": {
+      "yiisoft/yii2-composer": true
+    }
+  }
+}
