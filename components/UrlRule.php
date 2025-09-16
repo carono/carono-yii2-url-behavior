@@ -160,7 +160,7 @@ final class UrlRule extends Component
             } elseif ($this->model->hasAttribute($param) || property_exists($this->model, $param)) {
                 $value = $this->model->{$param};
             } elseif (str_contains($param, '.')) {
-                return $value = ArrayHelper::getValue($this->model, $param);
+                $value = ArrayHelper::getValue($this->model, $param);
             } else {
                 $value = $param;
             }
