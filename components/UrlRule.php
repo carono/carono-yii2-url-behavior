@@ -9,6 +9,8 @@ use yii\base\InvalidConfigException;
 use yii\caching\Cache;
 use yii\db\ActiveRecord;
 use yii\di\Instance;
+use yii\helpers\ArrayHelper;
+use yii\helpers\Html;
 use yii\rbac\BaseManager;
 
 /**
@@ -157,6 +159,8 @@ final class UrlRule extends Component
                 $value = call_user_func($param, $this->model);
             } elseif ($this->model->hasAttribute($param) || property_exists($this->model, $param)) {
                 $value = $this->model->{$param};
+            } elseif (str_contains($param, '.')) {
+                return $value = ArrayHelper::getValue($this->model, $param);
             } else {
                 $value = $param;
             }
